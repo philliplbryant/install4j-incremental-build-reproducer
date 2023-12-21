@@ -1,0 +1,1 @@
+This document simulates a shared data resource to be installed by the installer created by Install4J.

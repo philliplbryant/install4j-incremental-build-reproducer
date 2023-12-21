@@ -1,0 +1,4 @@
+# List of generated media files. The columns are tab-separated:
+# id | media file type | display name | media file path
+59	windows	Windows	C:\Dev\Projects\SCM\Demos\install4j-reproducer\installer-module\build\installer\executables\Install-Basic-Data-Windows-1.0.exe
+6812	unix	Unix	C:\Dev\Projects\SCM\Demos\install4j-reproducer\installer-module\build\installer\executables\Install-Basic-Data-Linux-1.0.sh
