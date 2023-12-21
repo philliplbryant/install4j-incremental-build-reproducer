@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<updateDescriptor baseUrl="">
-  <entry targetMediaFileId="59" updatableVersionMin="" updatableVersionMax="" fileName="Install-Basic-Data-Windows-1.0.exe" newVersion="1.0" newMediaFileId="59" fileSize="3919872" bundledJre="" archive="false" singleBundle="false">
-    <comment language="en" />
-  </entry>
-  <entry targetMediaFileId="6812" updatableVersionMin="" updatableVersionMax="" fileName="Install-Basic-Data-Linux-1.0.sh" newVersion="1.0" newMediaFileId="6812" fileSize="2571133" bundledJre="" archive="false" singleBundle="false">
-    <comment language="en" />
-  </entry>
-</updateDescriptor>

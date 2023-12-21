@@ -1,0 +1,26 @@
+# Ignore Gradle and IntelliJ build output directories everywhere
+build/
+out/
+
+# Gradle cache directory
+.gradle
+
+# Gradle Profiler output
+gradle-user-home
+profile-out*
+
+# Ignore all Gradle generated and install/user-specific IntelliJ meta-data
+.idea/*
+
+# Sometimes IntelliJ generates project files outside .idea/
+*.iml
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Swap files for various editors
+*~
+*.swp
