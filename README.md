@@ -4,7 +4,7 @@ Uses the Install4J Gradle plugin to create an installer, demonstrating the plugi
 ## To test support for incremental building:
 1. Execute the Gradle task to build the installer:  
 `.\gradlew.bat install4j` (Windows)  
-`./gradlew install4j` (Unix/Mac OS)  
+`./gradlew install4j` (Unix/macOS)  
 2. Note that two tasks are executed (`unzipData` and `install4j`):
 ```
 BUILD SUCCESSFUL in 36s
@@ -12,7 +12,7 @@ BUILD SUCCESSFUL in 36s
 Configuration cache entry discarded with 21 problems.
 ```
 3. Without modifying any files, execute the Gradle task to build the installer (see above)
-4. Note that one task is executed (`install4j`) and one task is up to date (`unzipData`):
+4. Note that one task is executed (`install4j`) and one task is up-to-date (`unzipData`):
 ```
 BUILD SUCCESSFUL in 8s
 2 actionable tasks: 1 executed, 1 up-to-date
@@ -22,7 +22,7 @@ Configuration cache entry discarded with 21 problems.
 ## To test support for configuration caching:
 1. Execute the Gradle task to build the installer:  
    `.\gradlew.bat install4j` (Windows)  
-   `./gradlew install4j` (Unix/Mac OS)
+   `./gradlew install4j` (Unix/macOS)
 2. Note the Gradle outputs relating to configuration cache as follows:
 ```
 Configuration on demand is an incubating feature.

@@ -11,7 +11,7 @@ plugins {
 
 version = rootProject.version
 
-description = "Basic Data Module"
+description = "Data Resource Installer"
 
 val dataScopeConfigurationName = "dataScope"
 val dataPathConfigurationName = "dataPath"
@@ -97,10 +97,10 @@ tasks {
         ).get().asFile.absolutePath
 
         val compilerVariables: Map<Any, Any> = mapOf(
-            "installerOutputDir" to installerOutputDir,
             "dataDir" to dataDir,
             "dataInstallerBaseName" to "Basic-Data",
             "dataVersion" to project.version,
+            "installerOutputDir" to installerOutputDir,
         )
 
         projectFile = configFile
@@ -111,16 +111,16 @@ tasks {
         // up-to-date checking but including them here to eliminate the
         // possibility of not declaring them as being the culprit
 
-        inputs.property("install4jHomeDirectory", install4jHomeDirectory)
+        inputs.dir(install4jHomeDirectory)
 
-        compilerVariables.forEach { entry ->
-            inputs.property("${entry.key}", "${entry.value}")
-        }
+        inputs.dir(dataDir)
+
+        inputs.property("dataInstallerBaseName", "Basic-Data")
+
+        inputs.property("dataVersion", project.version)
 
         inputs.file(configFile)
             .withPathSensitivity(PathSensitivity.RELATIVE)
-
-        inputs.dir(dataDir)
 
         outputs.dir(installerOutputDir)
     }

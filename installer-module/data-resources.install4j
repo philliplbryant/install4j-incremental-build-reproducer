@@ -6,11 +6,10 @@
       <envVar name="JAVA_HOME" />
     </searchSequence>
     <variables>
-      <variable name="installerOutputDir" description="The path to which the generated installer will be output." />
       <variable name="dataDir" description="The path to the directory containing the data resources to be installed." />
-      <variable name="dataInstallationDir" description="The default installation location on the target system (to be overridden on a per-media basis)." />
       <variable name="dataInstallerBaseName" description="The common portion of the installer and uninstaller executable file names." />
       <variable name="dataVersion" description="The version of the map data ZIP file." />
+      <variable name="installerOutputDir" description="The path to which the generated installer will be output." />
     </variables>
     <jreBundles>
       <modules />
@@ -443,16 +442,10 @@ return console.askYesNo(message, true);
     </styles>
   </installerGui>
   <mediaSets>
-    <windows name="Windows" id="59" mediaFileName="Install-${compiler:dataInstallerBaseName}-Windows-${compiler:dataVersion}" installDir="data" customInstallBaseDir="${compiler:dataInstallationDir}" architecture="64">
-      <variables>
-        <variable name="dataInstallationDir" value="/${compiler:env.ProgramData}/install4j-example" />
-      </variables>
+    <windows name="Windows" id="59" mediaFileName="Install-${compiler:dataInstallerBaseName}-${compiler:dataVersion}" installDir="Install4j Example" customInstallBaseDir="${installer:sys.programDataDir}" architecture="64">
       <jreBundle jreBundleSource="none" />
     </windows>
-    <unixInstaller name="Unix" id="6812" mediaFileName="Install-${compiler:dataInstallerBaseName}-Linux-${compiler:dataVersion}" installDir="data" customInstallBaseDir="${compiler:dataInstallationDir}">
-      <variables>
-        <variable name="dataInstallationDir" value="/usr/share/install4j-example" />
-      </variables>
+    <unixInstaller name="Unix" id="6812" mediaFileName="Install-${compiler:dataInstallerBaseName}-${compiler:dataVersion}" installDir="install4j-example" customInstallBaseDir="${installer:sys.programDataDir}">
       <jreBundle jreBundleSource="none" />
     </unixInstaller>
   </mediaSets>
