@@ -4,6 +4,26 @@ import com.install4j.gradle.Install4jTask
  * This module uses Install4J to create an installer for data resources used by other applications.
  */
 
+buildscript {
+    repositories {
+        flatDir {
+            dir(
+                rootProject.layout.projectDirectory.dir("plugin-dependencies")
+            )
+        }
+    }
+
+    dependencies {
+        classpath(
+            files(
+                rootProject.layout.projectDirectory.file(
+                    "plugin-dependencies/gradle.jar"
+                )
+            )
+        )
+    }
+}
+
 plugins {
     id("base")
     id("com.install4j.gradle") version "10.0.6"
@@ -76,8 +96,17 @@ tasks {
     ).get().asFile.absolutePath
 
     val unzipData by registering(Copy::class) {
+
+        notCompatibleWithConfigurationCache(
+            "Cannot serialize Gradle script object references."
+        )
+
         from(provider { dataPath.map { zipTree(it) } })
         into(dataDir)
+
+        doFirst {
+            delete(dataDir)
+        }
     }
 
     named<Install4jTask>("install4j").configure {
